@@ -1,0 +1,29 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node
+node_modules/
+dist/
+build/
+.cache/
+.vite/
+coverage/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Database / docker volumes
+pgdata/
+*.sqlite
+*.sqlite3

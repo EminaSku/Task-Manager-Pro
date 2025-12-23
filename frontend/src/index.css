@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
+/* --- Calm moving clouds background for Login/Register --- */
+.cloud {
+  position: absolute;
+  width: 520px;
+  height: 220px;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.55;
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.9), rgba(255,255,255,0.0) 65%),
+              radial-gradient(circle at 60% 55%, rgba(255,255,255,0.75), rgba(255,255,255,0.0) 70%),
+              radial-gradient(circle at 45% 70%, rgba(255,255,255,0.6), rgba(255,255,255,0.0) 72%);
+  animation: cloudFloat 22s linear infinite;
+}
+
+.cloud-1 { top: 8%;  left: -25%; transform: scale(1.05); animation-duration: 28s; }
+.cloud-2 { top: 22%; left: -35%; transform: scale(0.85); animation-duration: 34s; opacity: 0.45; }
+.cloud-3 { top: 48%; left: -30%; transform: scale(1.15); animation-duration: 30s; opacity: 0.5; }
+.cloud-4 { top: 68%; left: -40%; transform: scale(0.95); animation-duration: 38s; opacity: 0.4; }
+
+@keyframes cloudFloat {
+  0%   { transform: translateX(0) translateY(0) scale(var(--s, 1)); }
+  25%  { transform: translateX(35vw) translateY(-10px); }
+  50%  { transform: translateX(70vw) translateY(8px); }
+  75%  { transform: translateX(105vw) translateY(-6px); }
+  100% { transform: translateX(140vw) translateY(0); }
+}
+
+:root{
+  /* Focus / trust */
+  --brand: #2563eb;       /* blue-600 */
+  --brand2:#1d4ed8;       /* blue-700 */
+  --brandSoft: rgba(37, 99, 235, 0.12);
+
+  /* Progress / calm energy */
+  --success:#16a34a;      /* green-600 */
+  --successSoft: rgba(22, 163, 74, 0.14);
+
+  /* Highlight / attention */
+  --warn:#f59e0b;         /* amber-500 */
+  --warnSoft: rgba(245, 158, 11, 0.16);
+
+  /* CTA / action */
+  --cta:#f97316;          /* orange-500 */
+  --cta2:#ea580c;         /* orange-600 */
+  --ctaSoft: rgba(249, 115, 22, 0.14);
+
+  /* Danger */
+  --danger:#ef4444;       /* red-500 */
+  --dangerSoft: rgba(239, 68, 68, 0.14);
+}
+
+/* ---------- Animated blobs ---------- */
+@keyframes blob {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  33%  { transform: translate(30px, -40px) scale(1.06); }
+  66%  { transform: translate(-20px, 30px) scale(0.98); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+@keyframes floaty {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.blob {
+  animation: blob 14s ease-in-out infinite;
+  will-change: transform;
+}
+.blob-2 { animation-duration: 18s; animation-delay: -4s; }
+.blob-3 { animation-duration: 22s; animation-delay: -7s; }
+
+/* ---------- Modal focus polish ---------- */
+:focus-visible {
+  outline: none;
+}
+
+/* ---------- Toast enter animation ---------- */
+@keyframes toast-in {
+  0% { opacity: 0; transform: translateY(8px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0px) scale(1); }
+}
+.toast-in {
+  animation: toast-in 180ms ease-out;
+}
+
+.box {
+  @apply border border-black/20;
+}
