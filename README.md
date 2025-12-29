@@ -15,4 +15,4 @@ npm install
 npm run dev
 
 ## Notes
-Create a `.env` file for backend and frontend (see `.env.example` if provided).
+Create a `.env` file for backend and frontend
